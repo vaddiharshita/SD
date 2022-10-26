@@ -1,0 +1,20 @@
+.salesdash_content{
+    display: flex;
+    flex-direction: row;
+}
+.salesdash_content_right{
+    background-color: white; 
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    padding-right: 130px;
+  
+    
+}
+.salesdash_content_right_inside{
+    height: 50%;
+    width:70% ;
+    border-color: black ;
+  
+}
