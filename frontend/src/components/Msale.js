@@ -3,13 +3,14 @@ import { AiOutlineDown } from "react-icons/ai";
 import { BsThreeDots } from "react-icons/bs";
 import { RiBookmarkFill } from "react-icons/ri"
 import { HiUser } from "react-icons/hi";
+//import { click } from "@testing-library/user-event/dist/click";
 // import { useState } from "react";
 // import Pop from "./Pop.js";
 
-export default function SalesDash({ todo, inprogress, completed , setTodo, setInProgress, setCompleted }) {
-    
+export default function SalesDash({ todo, inprogress, completed, setTodo, setInProgress, setCompleted }) {
 
-     //const [todoArray, setTodoArray] = useState([])
+
+    //const [todoArray, setTodoArray] = useState([])
     // const [inprogressArray, setInprogressArray] = useState([])
     // const [completedArray, setCompletedArray] = useState([])
 
@@ -17,8 +18,8 @@ export default function SalesDash({ todo, inprogress, completed , setTodo, setIn
     // console.log("after" + JSON.stringify(todo))
 
 
-     //setTodoArray(todo)
-     //console.log(todoArray)
+    //setTodoArray(todo)
+    //console.log(todoArray)
 
     // setInprogressArray(JSON.stringify(inprogress))
     // setCompletedArray(JSON.stringify(completed))
@@ -76,34 +77,34 @@ export default function SalesDash({ todo, inprogress, completed , setTodo, setIn
     //     setCompletedArray(temp)
     // }
 
-    const handleTodo=(e,itm)=>{
-        let temp=[...todo]
+    const handleTodo = (e, itm) => {
+        let temp = [...todo]
         for (const iterator of temp) {
-            if(iterator.id===itm.id){
-                iterator.isclicked=!iterator.isclicked
+            if (iterator.id === itm.id) {
+                iterator.isclicked = !iterator.isclicked
             }
         }
         setTodo(temp)
     }
-    const handleInProgress=(e,itm)=>{
-        let temp=[...inprogress]
+    const handleInProgress = (e, itm) => {
+        let temp = [...inprogress]
         for (const iterator of temp) {
-            if(iterator.id===itm.id && iterator.txtActivitytype === itm.txtActivitytype){
-                iterator.isclicked=!iterator.isclicked
+            if (iterator.id === itm.id && iterator.txtActivitytype === itm.txtActivitytype) {
+                iterator.isclicked = !iterator.isclicked
             }
         }
         setInProgress(temp)
     }
-    const handleCompleted=(e,itm)=>{
-        let temp=[...completed]
+    const handleCompleted = (e, itm) => {
+        let temp = [...completed]
         for (const iterator of temp) {
-            if(iterator.id===itm.id && iterator.txtActivitytype === itm.txtActivitytype){
-                iterator.isclicked=!iterator.isclicked
+            if (iterator.id === itm.id && iterator.txtActivitytype === itm.txtActivitytype) {
+                iterator.isclicked = !iterator.isclicked
             }
         }
         setCompleted(temp)
     }
-    
+
     return <>
         <div className="sales_SalesOuter">
             <div className="sales_SalesInner1">
@@ -115,9 +116,9 @@ export default function SalesDash({ todo, inprogress, completed , setTodo, setIn
                     todo.map((itm1, indx) => {
                         return (<div className="sales_Inner_row2">
                             <div className="sales_Inner_row2_row1">
-                                {/* < AiOutlineDown onClick={(e) => { tododropDown(todoArray, itm1) }} /> */}
-                           
-                                < AiOutlineDown onClick={(e)=>handleTodo(e,itm1)} /> 
+                                {/*< AiOutlineDown onClick={(e) => { tododropDown(todoArray, itm1) }} />*/}
+
+                                < AiOutlineDown onClick={(e) => handleTodo(e, itm1)} />
                                 <label>{itm1.txtDescription}</label>
                                 < BsThreeDots className="sales_threedotsicon" />
                             </div>
@@ -168,7 +169,7 @@ export default function SalesDash({ todo, inprogress, completed , setTodo, setIn
                         return (
                             <div className="sales_Inner_row2">
                                 <div className="sales_Inner_row2_row1">
-                                < AiOutlineDown onClick={(e)=>{handleInProgress(e,itm2)}} /> 
+                                    < AiOutlineDown onClick={(e) => { handleInProgress(e, itm2) }} />
                                     {/* < AiOutlineDown onClick={(e) => { inprogressdropDown(inprogressArray, itm2) }} /> */}
                                     <label>{itm2.txtDescription}</label>
                                     < BsThreeDots className="sales_threedotsicon" />
@@ -220,7 +221,7 @@ export default function SalesDash({ todo, inprogress, completed , setTodo, setIn
                         return (
                             <div className="sales_Inner_row2">
                                 <div className="sales_Inner_row2_row1">
-                                < AiOutlineDown onClick={(e)=>{handleCompleted(e,itm3)}} /> 
+                                    < AiOutlineDown onClick={(e) => { handleCompleted(e, itm3) }} />
                                     {/* < AiOutlineDown onClick={(e) => { completeddropDown(completedArray, itm3) }} /> */}
                                     <label>{itm3.txtDescription}</label>
                                     < BsThreeDots className="sales_threedotsicon" />
