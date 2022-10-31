@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: myservice
+service: serverless
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
@@ -64,136 +64,14 @@ functions:
     events:
       - http:
           method: post
-          path: Login        
-  getsingleprofile:
-    handler: handler.getsingleprofile
-    events:
-      - http:
-          method: post
-          path: getsingleprofile 
-    middleware:
-      pre:
-        - handler.middleware 
+          path: Login 
   getTODO:
     handler: handler.getTODO
     events:
       - http:
           method: post
           path: getTODO
-  getinprogress:
-    handler: handler.getinprogress
-    events:
-      - http:
-          method: post
-          path: getinprogress
-  getcompleted:
-    handler: handler.getcompleted
-    events:
-      - http:
-          method: post
-          path: getcompleted 
-  Insertsingleprofile:
-    handler: handler.Insertsingleprofile
-    events:
-      - http:
-          method: post
-          path: Insertsingleprofile
-  UpdateSingleProfile:
-    handler: handler.UpdateSingleProfile
-    events:
-      - http:
-          method: post
-          path: UpdateSingleProfile
-    middleware:
-      pre:
-        - handler.middleware
-  CampaignProspectwiseCount:
-    handler: handler.CampaignProspectwiseCount
-    events:
-      - http:
-          method: post
-          path: CampaignProspectwiseCount
-  leadsfunnel:
-    handler: handler.leadsfunnel
-    events:
-      - http:
-          method: post
-          path: leadsfunnel
-  prospectGrowth:
-    handler: handler.prospectGrowth
-    events:
-      - http:
-          method: post
-          path: prospectGrowth
-  prospectprogress:
-    handler: handler.prospectprogress
-    events:
-      - http:
-          method: post
-          path: prospectprogress
-  SalespersonwiseSuccessRate:
-    handler: handler.SalespersonwiseSuccessRate
-    events:
-      - http:
-          method: post
-          path: SalespersonwiseSuccessRate
-  Managerwiseprospectcount:
-    handler: handler.Managerwiseprospectcount
-    events:
-      - http:
-          method: post
-          path: Managerwiseprospectcount
-  GetUserListWithFilter:
-    handler: handler.GetUserListWithFilter
-    events:
-      - http:
-          method: post
-          path: GetUserListWithFilter
-  getlead:
-    handler: handler.getlead
-    events:
-      - http:
-          method: post
-          path: getlead
-    middleware:
-      pre:
-        - handler.middleware 
-  insertlead:
-    handler: handler.insertlead
-    events:
-      - http:
-          method: post
-          path: insertlead
-    middleware:
-      pre:
-        - handler.middleware
-  updatelead:
-    handler: handler.updatelead
-    events:
-      - http:
-          method: post
-          path: updatelead
-    middleware:
-      pre:
-        - handler.middleware 
-  GetSingleTask:
-    handler: handler.GetSingleTask
-    events:
-      - http:
-          method: post
-          path: GetSingleTask
-    middleware:
-      pre:
-        - handler.middleware 
-  GetTaskListWithFilter:
-    handler: handler.GetTaskListWithFilter
-    events:
-      - http:
-          method: post
-          path: GetTaskListWithFilter
-    middleware:
-      pre:
-        - handler.middleware
+          cors: true  
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

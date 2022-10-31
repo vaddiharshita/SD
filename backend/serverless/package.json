@@ -1,0 +1,19 @@
+{
+  "name": "serverless",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-offline": "^11.2.1"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "serverless-middleware": "^3.0.0"
+  }
+}
